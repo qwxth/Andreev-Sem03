@@ -1,0 +1,63 @@
+Функционал: Решение биквадратного уравнения # features/solver.feature:3
+  Как студент
+  Я хочу решать биквадратные уравнения
+  Чтобы найти их корни
+  Предыстория:   # features/solver.feature:8
+
+  Сценарий: Уравнение с четырьмя корнями         # features/solver.feature:12
+    Дано у меня есть решатель уравнений          # features/steps/solver_steps.py:21
+    Дано биквадратное уравнение x⁴ - 5x² + 4 = 0 # features/steps/solver_steps.py:27
+    Когда я решаю это уравнение                  # features/steps/solver_steps.py:77
+    Тогда я получаю 4 корня                      # features/steps/solver_steps.py:97
+    И корни равны -2.0, -1.0, 1.0, 2.0           # features/steps/solver_steps.py:106
+
+  Сценарий: Уравнение с нулевым корнем       # features/solver.feature:19
+    Дано у меня есть решатель уравнений      # features/steps/solver_steps.py:21
+    Дано биквадратное уравнение x⁴ - 4x² = 0 # features/steps/solver_steps.py:33
+    Когда я решаю это уравнение              # features/steps/solver_steps.py:77
+    Тогда я получаю 3 корня                  # features/steps/solver_steps.py:97
+    И среди корней есть 0                    # features/steps/solver_steps.py:122
+
+  Сценарий: Уравнение без корней                # features/solver.feature:26
+    Дано у меня есть решатель уравнений         # features/steps/solver_steps.py:21
+    Дано биквадратное уравнение x⁴ + x² + 1 = 0 # features/steps/solver_steps.py:39
+    Когда я решаю это уравнение                 # features/steps/solver_steps.py:77
+    Тогда я получаю 0 корней                    # features/steps/solver_steps.py:97
+
+  Сценарий: Квадратное уравнение с двумя корнями  # features/solver.feature:32
+    Дано у меня есть решатель уравнений           # features/steps/solver_steps.py:21
+    Дано квадратное уравнение y² - 5y + 4 = 0     # features/steps/solver_steps.py:45
+    Когда я решаю квадратное уравнение            # features/steps/solver_steps.py:85
+    Тогда я получаю 2 корня                       # features/steps/solver_steps.py:97
+    И все корни положительные                     # features/steps/solver_steps.py:133
+
+  Сценарий: Квадратное уравнение без корней  # features/solver.feature:39
+    Дано у меня есть решатель уравнений      # features/steps/solver_steps.py:21
+    Дано квадратное уравнение y² + y + 1 = 0 # features/steps/solver_steps.py:52
+    Когда я решаю квадратное уравнение       # features/steps/solver_steps.py:85
+    Тогда я получаю 0 корней                 # features/steps/solver_steps.py:97
+
+  Структура сценария: Проверка количества корней -- @1.1   # features/solver.feature:52
+    Дано у меня есть решатель уравнений                    # features/steps/solver_steps.py:21
+    Дано биквадратное уравнение с коэффициентами 1, -5, 4  # features/steps/solver_steps.py:61
+    Когда я решаю это уравнение                            # features/steps/solver_steps.py:77
+    Тогда я получаю 4 корней                               # features/steps/solver_steps.py:97
+
+  Структура сценария: Проверка количества корней -- @1.2   # features/solver.feature:53
+    Дано у меня есть решатель уравнений                    # features/steps/solver_steps.py:21
+    Дано биквадратное уравнение с коэффициентами 1, -4, 0  # features/steps/solver_steps.py:61
+    Когда я решаю это уравнение                            # features/steps/solver_steps.py:77
+    Тогда я получаю 3 корней                               # features/steps/solver_steps.py:97
+
+  Структура сценария: Проверка количества корней -- @1.3   # features/solver.feature:54
+    Дано у меня есть решатель уравнений                    # features/steps/solver_steps.py:21
+    Дано биквадратное уравнение с коэффициентами 1, 1, 1   # features/steps/solver_steps.py:61
+    Когда я решаю это уравнение                            # features/steps/solver_steps.py:77
+    Тогда я получаю 0 корней                               # features/steps/solver_steps.py:97
+
+  Структура сценария: Проверка количества корней -- @1.4   # features/solver.feature:55
+    Дано у меня есть решатель уравнений                    # features/steps/solver_steps.py:21
+    Дано биквадратное уравнение с коэффициентами 1, 0, -16 # features/steps/solver_steps.py:61
+    Когда я решаю это уравнение                            # features/steps/solver_steps.py:77
+    Тогда я получаю 2 корней                               # features/steps/solver_steps.py:97
+
