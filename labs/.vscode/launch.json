@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "cargo run",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["run"],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "cargo test",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["test", "--", "--nocapture"],
+            "group": "test"
+        },
+        {
+            "label": "cargo run with args",
+            "type": "shell",
+            "command": "cargo",
+            "args": ["run", "--", "1", "-5", "4"],
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        }
+    ]
+}
